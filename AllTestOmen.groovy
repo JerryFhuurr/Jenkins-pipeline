@@ -2,31 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Pull code from Gitee') {
+        stage('Connect to device') {
             steps {
-                echo 'Updating code...'
-                git branch: 'main', credentialsId: '7229e80a-154e-4767-bd91-cb89ebc32e80', url: 'https://gitee.com/fhuurr/TestAutomation.git'
-                echo 'Updating finished'
+                bat 'adb connect bcbcb6de'
             }
         }
-        stage('Connect to Android') {
+        stage('Install apk') {
             steps {
-                bat 'adb connect 172.29.148.98'
+                bat 'adb -s bcbcb6de install "E:\\Scripts\\Gitee\\Apk\\minplan-1.1.1.apk"'
             }
         }
-        stage('Install app to device') {
+        stage('Login part') {
             steps {
-                bat 'adb -s 172.29.148.98:5555 install C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Apk\\minplan-1.1.1.apk'
-            }
-        }
-        stage('Excuting scripts') {
-            steps {
-                echo 'Start to excute the scripts'
-            }
-        }
-        stage('Login and signup') {
-            steps {
-                echo 'Login & signup start'
+                echo 'Login part start'
             }
         }
         stage('TC3') {
@@ -36,8 +24,8 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                bat '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
                                 node TC3.js'''
                             }
                         }
@@ -52,8 +40,8 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                bat '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
                                 node TC4.js'''
                             }
                         }
@@ -68,8 +56,8 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                bat '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
                                 node TC5.js'''
                             }
                         }
@@ -84,8 +72,8 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                bat '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
                                 node TC7.js'''
                             }
                         }
@@ -100,8 +88,8 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                bat '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
                                 node TC8.js'''
                             }
                         }
@@ -109,20 +97,22 @@ pipeline {
                 }
             }
         }
-        stage('Warning sign and strategy start') {
+        stage('Warning sign & strategy part') {
             steps {
-                echo 'Warning sign and strategy start'
+                echo 'Warning sign & strategy part start'
             }
         }
         stage('TC10') {
             steps {
                 script {
-                    timeout(time: 8, unit: 'MINUTES') {
-                        retry(10) {
-                            bat 'adb shell am force-stop com.minplan.minplan_app'
-                            bat '''C:
-                            cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\Tests\\OnRealDevice\\Surface
-                            node TC10.js'''
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC10.js'''
+                            }
                         }
                     }
                 }
@@ -135,13 +125,98 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                pwsh '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\TestPy
-                                python TC11R.py'''
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC11.js'''
                             }
                         }
                     }
                 }
+            }
+        }
+        stage('TC14') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC14.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('TC15') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC15.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('TC16') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC16.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('TC18') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 15, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC18.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('TC19') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC19.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage('Contact part') {
+            steps {
+                echo 'Contact part start'
             }
         }
         stage('TC12') {
@@ -151,9 +226,9 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                pwsh '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\TestPy
-                                python TC12R.py'''
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC12.js'''
                             }
                         }
                     }
@@ -167,51 +242,35 @@ pipeline {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                pwsh '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\TestPy
-                                python TC13R.py'''
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC13.js'''
                             }
                         }
                     }
                 }
             }
         }
-        stage('TC14') {
+        stage('TC20') {
             steps {
                 script {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                        timeout(time: 10, unit: 'MINUTES') {
+                        timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
                                 bat 'adb shell am force-stop com.minplan.minplan_app'
-                                pwsh '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\TestPy
-                                python TC14R.py'''
+                                bat '''E:
+                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                node TC20.js'''
                             }
                         }
                     }
                 }
             }
         }
-        stage('TC15 & 16') {
-            steps {
-                script {
-                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                        timeout(time: 10, unit: 'MINUTES') {
-                            retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
-                                pwsh '''C:
-                                cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MinplanTest-surface\\TestPy
-                                python TC15_16R.py'''
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        stage('Excute done') {
-            steps {
-                echo 'Excute scripts done, please check the results'
-            }
+    }
+    stage('Finished') {
+        steps {
+            echo 'All tests finished'
         }
     }
 
@@ -227,14 +286,14 @@ pipeline {
                         <table width='95%' cellpadding='0' cellspacing='0'>
                             <tr>
                                 <td>
-                                    <h2>构建结果:<span color='#0000FF'>${BUILD_DISPLAY_NAME} Fail</span></h2>
+                                    <h2>Build result:<span color='#0000FF'>${BUILD_DISPLAY_NAME} Fail</span></h2>
                                 </td>
                             </tr>
                             <!-- 构建信息 -->
                             <tr>
                                 <td><br />
                                     <b>
-                                        <font color="#0B610B">构建信息</font>
+                                        <font color="#0B610B">Build info</font>
                                     </b>
                                     <hr size="2" width="100%" align="center" />
                                 </td>
@@ -242,21 +301,21 @@ pipeline {
                             <tr>
                                 <td>
                                     <ul>
-                                        <li>构建编号&nbsp;：&nbsp;第${BUILD_NUMBER}次构建</li>
-                                        <li>构建节点：&nbsp;${NODE_NAME}</li>
-                                        <li>项目地址：&nbsp;<a href="${JOB_URL}">${JOB_URL}</a></li>
-                                        <li>构建日志：&nbsp;<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
+                                        <li>Build &nbsp;：&nbsp;No.${BUILD_NUMBER}</li>
+                                        <li>Build node：&nbsp;${NODE_NAME}</li>
+                                        <li>Project location：&nbsp;<a href="${JOB_URL}">${JOB_URL}</a></li>
+                                        <li>Build output：&nbsp;<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                                     </ul>
                                 </td>
                             </tr>
                             <tr>
-                              <td>
-                                  请将localhost换成<a href="http://qbtest.free.idcfengye.com">http://qbtest.free.idcfengye.com </a>后打开
-                              </td>
-                              <td>
-                                  若无法打开，请联系<a href="mailto:1063128177@qq.com">管理员</a>解决！
-                              </td>
-                          </tr>
+                                <td>
+                                    You need to download Zerotier if you want to open the link!
+                                </td>
+                                <td>
+                                    Please contact <a href="mailto:1063128177@qq.com">admin</a> if you have any problem!
+                                </td>
+                            </tr>
                         </table>
                     </body>
                     """,
@@ -274,14 +333,14 @@ pipeline {
                         <table width='95%' cellpadding='0' cellspacing='0'>
                             <tr>
                                 <td>
-                                    <h2>构建结果:<span color='#0000FF'>${BUILD_DISPLAY_NAME} OK</span></h2>
+                                    <h2>Build result:<span color='#0000FF'>${BUILD_DISPLAY_NAME} OK</span></h2>
                                 </td>
                             </tr>
                             <!-- 构建信息 -->
                             <tr>
                                 <td><br />
                                     <b>
-                                        <font color="#0B610B">构建信息</font>
+                                        <font color="#0B610B">Build info</font>
                                     </b>
                                     <hr size="2" width="100%" align="center" />
                                 </td>
@@ -289,21 +348,21 @@ pipeline {
                             <tr>
                                 <td>
                                     <ul>
-                                        <li>构建编号&nbsp;：&nbsp;第${BUILD_NUMBER}次构建</li>
-                                        <li>构建节点：&nbsp;${NODE_NAME}</li>
-                                        <li>项目地址：&nbsp;<a href="${JOB_URL}">${JOB_URL}</a></li>
-                                        <li>构建日志：&nbsp;<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
+                                        <li>Build &nbsp;：&nbsp;No.${BUILD_NUMBER}</li>
+                                        <li>Build node：&nbsp;${NODE_NAME}</li>
+                                        <li>Project location：&nbsp;<a href="${JOB_URL}">${JOB_URL}</a></li>
+                                        <li>Build output：&nbsp;<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                                     </ul>
                                 </td>
                             </tr>
                             <tr>
-                              <td>
-                                  请将localhost换成<a href="http://qbtest.free.idcfengye.com">http://qbtest.free.idcfengye.com </a>后打开
-                              </td>
-                              <td>
-                                  若无法打开，请联系<a href="mailto:1063128177@qq.com">管理员</a>解决！
-                              </td>
-                          </tr>
+                                <td>
+                                    You need to download Zerotier if you want to open the link!
+                                </td>
+                                <td>
+                                    Please contact <a href="mailto:1063128177@qq.com">admin</a> if you have any problem!
+                                </td>
+                            </tr>
                         </table>
                     </body>
                     """,
