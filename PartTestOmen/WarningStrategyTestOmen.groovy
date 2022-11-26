@@ -10,7 +10,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC10.js'''
                             }
                         }
@@ -26,7 +26,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC11.js'''
                             }
                         }
@@ -42,7 +42,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC14.js'''
                             }
                         }
@@ -58,7 +58,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC15.js'''
                             }
                         }
@@ -74,7 +74,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC16.js'''
                             }
                         }
@@ -90,7 +90,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC18.js'''
                             }
                         }
@@ -106,7 +106,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC19.js'''
                             }
                         }
