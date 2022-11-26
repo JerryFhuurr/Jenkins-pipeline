@@ -10,7 +10,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC12.js'''
                             }
                         }
@@ -26,7 +26,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC13.js'''
                             }
                         }
@@ -42,7 +42,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC20.js'''
                             }
                         }

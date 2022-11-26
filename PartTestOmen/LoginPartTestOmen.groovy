@@ -10,7 +10,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
                                 node TC3.js'''
                             }
                         }
@@ -26,7 +26,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
                                 node TC4.js'''
                             }
                         }
@@ -42,7 +42,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
                                 node TC5.js'''
                             }
                         }
@@ -58,7 +58,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
                                 node TC7.js'''
                             }
                         }
@@ -74,7 +74,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen55
                                 node TC8.js'''
                             }
                         }

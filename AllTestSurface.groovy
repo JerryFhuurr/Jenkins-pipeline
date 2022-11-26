@@ -16,7 +16,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC3.js'''
                             }
                         }
@@ -32,7 +32,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC4.js'''
                             }
                         }
@@ -48,7 +48,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC5.js'''
                             }
                         }
@@ -64,7 +64,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC7.js'''
                             }
                         }
@@ -80,7 +80,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC8.js'''
                             }
                         }
@@ -101,7 +101,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC10.js'''
                             }
                         }
@@ -117,7 +117,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC11.js'''
                             }
                         }
@@ -133,7 +133,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC14.js'''
                             }
                         }
@@ -149,7 +149,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC15.js'''
                             }
                         }
@@ -165,7 +165,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC16.js'''
                             }
                         }
@@ -181,7 +181,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC18.js'''
                             }
                         }
@@ -197,7 +197,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC19.js'''
                             }
                         }
@@ -218,7 +218,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC12.js'''
                             }
                         }
@@ -234,7 +234,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC13.js'''
                             }
                         }
@@ -250,7 +250,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Surface
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
                                 node TC20.js'''
                             }
                         }

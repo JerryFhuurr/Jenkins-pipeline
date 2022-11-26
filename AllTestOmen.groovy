@@ -15,7 +15,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC3.js'''
                             }
                         }
@@ -31,7 +31,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC4.js'''
                             }
                         }
@@ -47,7 +47,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC5.js'''
                             }
                         }
@@ -63,7 +63,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC7.js'''
                             }
                         }
@@ -79,7 +79,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC8.js'''
                             }
                         }
@@ -100,7 +100,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC10.js'''
                             }
                         }
@@ -116,7 +116,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC11.js'''
                             }
                         }
@@ -132,7 +132,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC14.js'''
                             }
                         }
@@ -148,7 +148,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC15.js'''
                             }
                         }
@@ -164,7 +164,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC16.js'''
                             }
                         }
@@ -180,7 +180,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC18.js'''
                             }
                         }
@@ -196,7 +196,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC19.js'''
                             }
                         }
@@ -217,7 +217,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC12.js'''
                             }
                         }
@@ -233,7 +233,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC13.js'''
                             }
                         }
@@ -249,7 +249,7 @@ pipeline {
                             retry(10) {
                                 
                                 bat '''E:
-                                cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Omen5
                                 node TC20.js'''
                             }
                         }
