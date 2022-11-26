@@ -8,7 +8,7 @@ pipeline {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                
                                 bat '''E:
                                 cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
                                 node TC3.js'''
@@ -24,7 +24,7 @@ pipeline {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                
                                 bat '''E:
                                 cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
                                 node TC4.js'''
@@ -40,7 +40,7 @@ pipeline {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                
                                 bat '''E:
                                 cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
                                 node TC5.js'''
@@ -56,7 +56,7 @@ pipeline {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                
                                 bat '''E:
                                 cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
                                 node TC7.js'''
@@ -72,7 +72,7 @@ pipeline {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         timeout(time: 8, unit: 'MINUTES') {
                             retry(10) {
-                                bat 'adb shell am force-stop com.minplan.minplan_app'
+                                
                                 bat '''E:
                                 cd E:\\Scripts\\Gitee\\Tests\\OnRealDevice\\Omen5
                                 node TC8.js'''
