@@ -258,12 +258,13 @@ pipeline {
                 }
             }
         }
-    }
-    stage('Finished') {
-        steps {
-            echo 'All tests finished'
+        stage('Finished') {
+            steps {
+                echo 'All tests finished'
+            }
         }
     }
+    
 
     post {
             failure {
