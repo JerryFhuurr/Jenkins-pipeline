@@ -258,6 +258,22 @@ pipeline {
                 }
             }
         }
+        stage('TC23') {
+            steps {
+                script {
+                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                        timeout(time: 8, unit: 'MINUTES') {
+                            retry(10) {
+                                
+                                bat '''E:
+                                cd E:\\Scripts\\Github\\Tests\\OnRealDevice\\Surface
+                                node TC23.js'''
+                            }
+                        }
+                    }
+                }
+            }
+        }
         stage('Finished') {
             steps {
                 echo 'All tests finished'
